@@ -1,0 +1,40 @@
+{
+  "name": "django-secret-key-generator",
+  "version": "0.0.0",
+  "private": true,
+  "description": "",
+  "scripts": {
+    "build": "rm -rf dist/ && parcel build -d public --no-autoinstall src/index.html",
+    "start": "rm -rf dist/ && parcel serve --no-autoinstall src/index.html",
+    "lint-js": "eslint src/ts/*",
+    "lint-css": "sass-lint -vqc .sass-lint.yml",
+    "test": "npm run lint-js && npm run lint-css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RealOrangeOne/django-secret-key-generator.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/RealOrangeOne/django-secret-key-generator/issues"
+  },
+  "homepage": "https://github.com/RealOrangeOne/django-secret-key-generator#readme",
+  "dependencies": {
+    "@openfonts/roboto-mono_all": "1.44.1",
+    "parcel-bundler": "1.12.4",
+    "preact": "10.4.1",
+    "prop-types": "15.7.2",
+    "sass": "1.26.5",
+    "typescript": "3.9.2"
+  },
+  "devDependencies": {
+    "eslint-config-dabapps": "6.0.4",
+    "eslint-config-preact": "1.1.1",
+    "sass-lint": "1.13.1"
+  },
+  "alias": {
+    "react": "preact/compat",
+    "react-dom/test-utils": "preact/test-utils",
+    "react-dom": "preact/compat"
+  }
+}

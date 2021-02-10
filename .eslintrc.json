@@ -1,0 +1,17 @@
+{
+  "extends": [
+    "dabapps/react",
+    "preact",
+    "dabapps/commonjs",
+    "dabapps/browser",
+    "dabapps/typescript",
+    "plugin:prettier/recommended"
+  ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  }
+}

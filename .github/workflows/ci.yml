@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - "*"
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: node-${{ hashFiles('package-lock.json') }}
+
+      - run: npm ci
+      - run: npm run build
+      - run: npm test
+
+      - name: Archive
+        uses: actions/upload-artifact@v2
+        with:
+          name: django-secret-key-generator
+          path: public
