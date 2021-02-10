@@ -3,6 +3,8 @@
 
 $bg: #222;
 $white: #FFF;
+$black: #000;
+$key-color: #A5A25C;
 
 body {
   display: flex;
@@ -42,16 +44,21 @@ main {
   }
 
   .key {
-    font-family: monospace;
-    font-weight: 300;
-    font-size: 2rem;
-    background-color: black;
+    background-color: $black;
     padding: 5px;
-    color: #A5A25C;
+    color: $key-color;
+    font-family: monospace;
+    font-size: 2rem;
+    font-weight: 300;
+    line-break: anywhere;
   }
 }
 
 section {
   margin: 0 auto;
-  width: 80vw;
+  width: 60vw;
+
+  @media all and (max-width: 700px) {
+    width: 95vw;
+  }
 }
