@@ -10,7 +10,7 @@ body {
   margin: 0;
 
   min-height: 100vh;
-  font-family: "Roboto Mono";
+  font-family: "Roboto Condensed";
 }
 
 
@@ -27,8 +27,8 @@ main {
 
   h1 {
     margin-bottom: 50px;
-    font-size: 3rem;
-    font-weight: 300;
+    font-size: 5rem;
+
   }
 
   .app-wrapper {
@@ -38,18 +38,16 @@ main {
 
   button {
     margin: 10px !important;
+    font-size: 1rem !important;
   }
 
-  input {
-    display: flex;
-    margin-bottom: 20px;
-    text-align: center;
-    color: $bg;
+  .key {
+    font-family: monospace;
+    font-weight: 300;
     font-size: 2rem;
-
-    @media (max-width: 700px) {
-      font-size: 1.5rem;
-    }
+    background-color: black;
+    padding: 5px;
+    color: #A5A25C;
   }
 }
 

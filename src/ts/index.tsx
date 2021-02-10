@@ -2,6 +2,8 @@ import { h, render } from "preact";
 import { PureComponent } from "preact/compat";
 import { AwesomeButton } from "react-awesome-button";
 
+import { getSecretKey } from "./random";
+
 interface State {
   value: string | null;
 }
@@ -14,14 +16,20 @@ export default class App extends PureComponent<{}, State> {
 
   onGenerate = () => {
     this.setState({
-      value: "42"
+      value: getSecretKey()
     });
   };
 
+  componentDidMount() {
+    this.onGenerate();
+  }
+
   render() {
+    const displayingValue =
+      this.state.value === null ? "Click generate" : `"${this.state.value}"`;
     return (
       <div className="app-wrapper">
-        <input placeholder="Click generate" disabled value={this.state.value} />
+        <h2 className="key">{displayingValue}</h2>
         <div>
           <AwesomeButton
             ripple
