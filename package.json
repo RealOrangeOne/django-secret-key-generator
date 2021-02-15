@@ -4,7 +4,7 @@
   "private": true,
   "description": "",
   "scripts": {
-    "build": "rm -rf dist/ && parcel build -d public --no-autoinstall src/index.html",
+    "build": "rm -rf dist/ && parcel build --no-autoinstall src/index.html",
     "start": "rm -rf dist/ && parcel serve --no-autoinstall src/index.html",
     "lint-js": "eslint src/ts/*",
     "lint-css": "sass-lint -vqc .sass-lint.yml",
