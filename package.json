@@ -21,6 +21,7 @@
   "homepage": "https://github.com/RealOrangeOne/django-secret-key-generator#readme",
   "dependencies": {
     "@openfonts/roboto-condensed_all": "1.44.2",
+    "clipboard-polyfill": "3.0.2",
     "parcel-bundler": "1.12.4",
     "preact": "10.5.12",
     "prop-types": "15.7.2",
