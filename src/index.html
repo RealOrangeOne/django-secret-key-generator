@@ -19,10 +19,23 @@
     <section>
       <h2>About</h2>
       <h3>What's a "secret key"?</h3>
+      <p>Django's <a href="https://docs.djangoproject.com/en/dev/ref/settings/#secret-key"><code>SECRET_KEY</code></a> is the setting used as the basis for secret generation and signing. It's used to generate session keys, password reset tokens and any other text signing done by Django.</p>
+      <p>For the safety and security of a Django application, this <strong>must</strong> be kept as secret as possible. Exposure of this key compromises many of the security protections Django puts in place.</p>
+
       <h3>Why does this application exist?</h3>
+      <p>There are a number of key generators out there, including <a href="https://miniwebtool.com/django-secret-key-generator/">miniwebtool</a> and <a href="https://djecrety.ir/">djecrety</a>.</p>
+      <p>Previously I used and recommended miniwebtool, however they recently added a number of intrusive adverts and cookie policies which make it annoying to use and difficult to recommend. Djecrety is nicer, however the site is far more complex, and doesn't share a codepath with the package it recommends (with the same name).</p>
+      <p>Instead, I've decided to <a href="https://xkcd.com/927/">write another</a>, which is much simpler, generates tokens more securely, and thus is easier to use and recommend.</a>
+
       <h3>How does this application work?</h3>
+      <p>I've intentionally copied the <a href="https://github.com/django/django/blob/3.1/django/core/management/utils.py#L77">implementation from Django</a> as closely as possible (whilst converting it to Typescript). Django's keys are 50 characters by default, as are these. The set of possible characters is also the same as Django's.</p>
+      <p>Secrets are generated solely in-browser, using the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API"><code>WebCrypto</code></a> API, and in a way which doesn't introduce <a href="https://stackoverflow.com/questions/10984974/why-do-people-say-there-is-modulo-bias-when-using-a-random-number-generator">modulo bias</a>. A single random value is generated, and used as an index into the possible characters. This is then repeated as many times as characters are needed for the key. Each chosen characters is then concatenated together to form the final key.</p>
+
+      <h3>Do I need this?</h3>
+      <p>Probably. Django's <code>startproject</code> command does generates a secret key for you in a secure way for your newly created Django project. But it's good practice to have a different key for each environment, whether that be development, staging or production. Therefore there's a need to generate one after a project has been setup, when you're creating a new environment or starting a project from something other than <code>startproject</code>.
+
       <h3>Can I see the source code?</h3>
-      <p><a href="https://github.com/RealOrangeOne/django-secret-key-generator">Of course!</a></p>
+      <p><a href="https://github.com/RealOrangeOne/django-secret-key-generator">Of course!</a> If you spot a problem or can do something better, please open an issue or PR.</p>
     </section>
     <script src="ts/app.tsx"></script>
     <script async defer data-domain="django-secret-key-generator.netlify.app" src="https://elbisualp.theorangeone.net/js/plausible.js"></script>
