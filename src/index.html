@@ -31,8 +31,8 @@
       <p>I've intentionally copied the <a href="https://github.com/django/django/blob/3.1/django/core/management/utils.py#L77">implementation from Django</a> as closely as possible (whilst converting it to Typescript). Django's keys are 50 characters by default, as are these. The set of possible characters is also the same as Django's.</p>
       <p>Secrets are generated solely in-browser, using the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API"><code>WebCrypto</code></a> API, and in a way which doesn't introduce <a href="https://stackoverflow.com/questions/10984974/why-do-people-say-there-is-modulo-bias-when-using-a-random-number-generator">modulo bias</a>. A single random value is generated, and used as an index into the possible characters. This is then repeated as many times as characters are needed for the key. Each chosen characters is then concatenated together to form the final key.</p>
 
-      <h3>Do I need this?</h3>
-      <p>Probably. Django's <code>startproject</code> command does generates a secret key for you in a secure way for your newly created Django project. But it's good practice to have a different key for each environment, whether that be development, staging or production. Therefore there's a need to generate one after a project has been setup, when you're creating a new environment or starting a project from something other than <code>startproject</code>.
+      <h3>Do you need this?</h3>
+      <p>Probably. Django's <code>startproject</code> command does generate a secret key for you in a secure way for your newly created Django project. But it's good practice to have a different key for each environment, whether that be development, staging or production. Therefore, there's a need to generate one after a project has been setup, when you're creating a new environment or starting a project from something other than <code>startproject</code>.
 
       <h3>Can I see the source code?</h3>
       <p><a href="https://github.com/RealOrangeOne/django-secret-key-generator">Of course!</a> If you spot a problem or can do something better, please open an issue or PR.</p>
