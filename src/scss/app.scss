@@ -52,6 +52,15 @@ main {
     font-weight: 300;
     line-break: anywhere;
   }
+
+  .bottom {
+    position: absolute;
+    bottom: 10%;
+
+    a {
+      color: white !important;
+    }
+  }
 }
 
 section, footer {
