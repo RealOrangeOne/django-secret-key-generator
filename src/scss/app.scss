@@ -54,9 +54,17 @@ main {
   }
 }
 
-section {
+section, footer {
   margin: 0 auto;
   background-color: $white;
   width: 800px;
   max-width: 90vw;
+}
+
+footer {
+  text-align: center;
+
+  a {
+    color: #FF7F00;
+  }
 }
