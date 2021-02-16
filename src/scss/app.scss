@@ -5,6 +5,7 @@ $bg: #222;
 $white: #FFF;
 $black: #000;
 $key-color: #A5A25C;
+$orange: #FF7F00;
 
 body {
   display: flex;
@@ -58,7 +59,7 @@ main {
     bottom: 10%;
 
     a {
-      color: white !important;
+      color: $white !important;
     }
   }
 }
@@ -74,6 +75,6 @@ footer {
   text-align: center;
 
   a {
-    color: #FF7F00;
+    color: $orange;
   }
 }
