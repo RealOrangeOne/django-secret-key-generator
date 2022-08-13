@@ -1,4 +1,3 @@
-import * as clipboard from "clipboard-polyfill/text";
 import { h, render } from "preact";
 import { PureComponent } from "preact/compat";
 import { AwesomeButton } from "react-awesome-button";
@@ -31,7 +30,7 @@ export default class App extends PureComponent<{}, State> {
   }
 
   onCopyToClipboard = () => {
-    clipboard.writeText(this.state.value).then(() => {
+    navigator.clipboard.writeText(this.state.value).then(() => {
       this.setState({
         copiedToClipboard: true
       });
