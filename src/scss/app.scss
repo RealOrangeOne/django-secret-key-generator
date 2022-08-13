@@ -1,5 +1,5 @@
-@import "node_modules/react-awesome-button/src/styles/styles.scss";
-@import "node_modules/react-awesome-button/src/styles/themes/theme-blue/styles.scss";
+@import "node_modules/react-awesome-button/src/styles/styles";
+@import "node_modules/react-awesome-button/src/styles/themes/theme-blue/styles";
 
 $bg: #222;
 $white: #FFF;
@@ -11,9 +11,23 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0;
-
   min-height: 100vh;
-  font-family: "Roboto Condensed";
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+section, footer {
+  margin: 0 auto;
+  background-color: $white;
+  width: 800px;
+  max-width: 90vw;
+}
+
+footer {
+  text-align: center;
+
+  a {
+    color: $orange;
+  }
 }
 
 
@@ -61,20 +75,5 @@ main {
     a {
       color: $white !important;
     }
-  }
-}
-
-section, footer {
-  margin: 0 auto;
-  background-color: $white;
-  width: 800px;
-  max-width: 90vw;
-}
-
-footer {
-  text-align: center;
-
-  a {
-    color: $orange;
   }
 }
