@@ -4,11 +4,12 @@
   "private": true,
   "description": "",
   "scripts": {
-    "build": "rm -rf dist/ && parcel build --no-autoinstall --public-url . src/index.html",
-    "start": "rm -rf dist/ && parcel serve --no-autoinstall src/index.html",
+    "build": "vite build",
+    "start": "vite",
     "lint-js": "eslint src/ts/*",
+    "lint-ts": "tsc --noemit",
     "lint-css": "stylelint src/scss",
-    "test": "npm run lint-js && npm run lint-css"
+    "test": "npm run lint-js && npm run lint-ts && npm run lint-css"
   },
   "repository": {
     "type": "git",
@@ -21,12 +22,12 @@
   "homepage": "https://github.com/RealOrangeOne/django-secret-key-generator#readme",
   "dependencies": {
     "@openfonts/roboto-condensed_all": "1.44.2",
-    "@parcel/transformer-sass": "2.7.0",
-    "parcel": "2.7.0",
-    "preact": "10.10.2",
+    "@preact/preset-vite": "^2.5.0",
+    "preact": "^10.13.0",
     "prop-types": "15.8.1",
-    "react-awesome-button": "6.5.1",
-    "typescript": "^4.7.4"
+    "react-awesome-button": "^7.0.5",
+    "sass": "^1.58.3",
+    "vite": "^4.1.4"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
@@ -34,7 +35,8 @@
     "eslint-config-preact": "1.1.4",
     "stylelint": "^14.10.0",
     "stylelint-config-prettier-scss": "^0.0.1",
-    "stylelint-config-standard-scss": "^5.0.0"
+    "stylelint-config-standard-scss": "^5.0.0",
+    "typescript": "^4.9.5"
   },
   "alias": {
     "react": "preact/compat",

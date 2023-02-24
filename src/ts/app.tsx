@@ -1,6 +1,9 @@
 import { h, render } from "preact";
 import { PureComponent } from "preact/compat";
-import { AwesomeButton } from "react-awesome-button";
+// Have to import the source directly
+import { AwesomeButton } from "react-awesome-button/src";
+
+import "react-awesome-button/dist/styles.css";
 
 import { getSecretKey } from "./random";
 
@@ -44,16 +47,10 @@ export default class App extends PureComponent<{}, State> {
       <div className="app-wrapper">
         <h2 className="key">{displayingValue}</h2>
         <div>
-          <AwesomeButton
-            ripple
-            type="primary"
-            size="large"
-            onPress={this.onGenerate}
-          >
+          <AwesomeButton type="primary" size="large" onPress={this.onGenerate}>
             Generate key
           </AwesomeButton>
           <AwesomeButton
-            ripple
             type="secondary"
             size="large"
             disabled={!this.state.value}

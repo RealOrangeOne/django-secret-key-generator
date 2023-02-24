@@ -1,6 +1,13 @@
 {
     "compilerOptions": {
-        "jsx": "react",
-        "jsxFactory": "h"
+        "jsx": "react-jsx",
+        "jsxImportSource": "preact",
+        "skipLibCheck": true,
+        "baseUrl": "./",
+        "paths": {
+            "react": ["./node_modules/preact/compat/"],
+            "react-dom": ["./node_modules/preact/compat/"],
+            "react-awesome-button/src": ["./node_modules/react-awesome-button/"]
+        }
     }
 }
