@@ -1,7 +1,6 @@
 const RAND_MAX = 2 ** 8;
 
 const CHARS = "abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)".split("");
-const KEY_LENGTH = 50;
 
 export function generateRandomValue(min: number, max: number): number {
   const generatorMax = max - min;
@@ -18,9 +17,11 @@ export function generateRandomValue(min: number, max: number): number {
 }
 
 export function getSecretKey() {
+  const keyLength = generateRandomValue(50, 60);
+
   const key = [];
-  for (let i = 0; i < KEY_LENGTH; i++) {
-    const index = generateRandomValue(0, CHARS.length);
+  for (let i = 0; i < keyLength; i++) {
+    const index = generateRandomValue(0, CHARS.length - 1);
     key.push(CHARS[index]);
   }
   return key.join("");

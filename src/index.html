@@ -29,7 +29,7 @@
       <p>Instead, I've decided to <a href="https://xkcd.com/927/">write another</a>, which is much simpler, generates tokens more securely, and thus is easier to use and recommend.</a>
 
       <h3>How does this application work?</h3>
-      <p>I've intentionally copied the <a href="https://github.com/django/django/blob/3.1/django/core/management/utils.py#L77">implementation from Django</a> as closely as possible (whilst converting it to Typescript). Django's keys are 50 characters by default, as are these. The set of possible characters is also the same as Django's.</p>
+      <p>I've intentionally copied the <a href="https://github.com/django/django/blob/3.1/django/core/management/utils.py#L77">implementation from Django</a> as closely as possible (whilst converting it to Typescript). Django's keys are 50 characters by default, however ours range between 50 and 60 (ramdomly, of course). The set of possible characters is also the same as Django's.</p>
       <p>Secrets are generated solely in-browser, using the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API"><code>WebCrypto</code></a> API, and in a way which doesn't introduce <a href="https://stackoverflow.com/questions/10984974/why-do-people-say-there-is-modulo-bias-when-using-a-random-number-generator">modulo bias</a>. A single random value is generated, and used as an index into the possible characters. This is then repeated as many times as characters are needed for the key. Each chosen characters is then concatenated together to form the final key.</p>
 
       <h3>Do you need this?</h3>
